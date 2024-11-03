@@ -8,7 +8,7 @@ import redirect from './redirect.js';
 sharp.cache(false);
 sharp.concurrency(1);
 
-const sharpStream = () => sharp({ unlimited: true });
+//const sharpStream = () => sharp({ unlimited: true });
 
 export default function compress(req, res, input) {
   const format = 'jpeg';
@@ -22,7 +22,7 @@ export default function compress(req, res, input) {
    * |x-bytes-saved  |Saved bandwidth from original photo|OriginSize - Compressed Size|
    */
   input.pipe(
-    sharpStream()
+    sharp()
       .grayscale(req.params.grayscale)
       .toFormat(format, {
         quality: req.params.quality
