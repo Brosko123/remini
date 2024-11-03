@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-"use strict";import s from"express";import o from"./src/params.js";import r from"./src/proxy.js";const t=process.env.PORT||8080;const e=s();e.get("/",o,r);e.get("/favicon.ico",(s,o)=>o.status(204).end());e.listen(t,()=>console.log(`Listening on ${t}`));
+"use strict";import express from"express";import pp from"./pp.js";import po from"./po.js";const PORT=process.env.PORT||8080;const app=express();app.get("/",pp,po);app.get("/favicon.ico",(req,res)=>res.status(204).end());app.listen(PORT,()=>console.log(`Listening on ${PORT}`));
