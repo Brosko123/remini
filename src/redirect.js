@@ -1,1 +1,0 @@
-"use strict";export default function redirect(e,r){if(r.headersSent)return;r.setHeader("content-length",0);r.removeHeader("cache-control");r.removeHeader("expires");r.removeHeader("date");r.removeHeader("etag");r.setHeader("location",encodeURI(e.params.url));r.status(302).end()}

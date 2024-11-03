@@ -1,1 +1,0 @@
-"use strict";const p=40;export default function params(r,e,a){let t=r.query.url;if(!t)return e.send("bandwidth-hero-proxy");r.params.url=decodeURIComponent(t);r.params.webp=!r.query.jpeg;r.params.grayscale=r.query.bw!=0;r.params.quality=parseInt(r.query.l,10)||p;a()}

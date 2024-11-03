@@ -1,1 +1,0 @@
-"use strict";const i=1024;const n=i*100;export default function shouldCompress(e){const{originType:r,originSize:t,webp:s}=e.params;if(!r.startsWith("image"))return false;if(t===0)return false;if(e.headers.range)return false;if(s&&t<i)return false;if(!s&&(r.endsWith("png")||r.endsWith("gif"))&&t<n){return false}return true}
