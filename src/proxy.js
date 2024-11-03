@@ -21,10 +21,10 @@ export default async function proxy(req, res) {
   /*
    * Avoid loopback that could cause server hang.
    */
-/*  if (
-    req.headers["127.0.0.1", "::1"].includes(req.headers["x-forwarded-for"] || req.ip)
-  )
-    return redirect(req, res);*/
+  const clientIP = req.headers["x-forwarded-for"] || req.ip;
+  if (["127.0.0.1", "::1"].includes(clientIP)) {
+    return redirect(req, res);
+  }
   
 
   try {
