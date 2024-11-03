@@ -1,15 +1,2 @@
 #!/usr/bin/env node
-"use strict";
-
-import express from 'express';
-import params from './src/params.js';
-import proxy from './src/proxy.js';
-const PORT = process.env.PORT || 8080;
-const app = express();
-
-// Uncomment the next line if you want to trust the proxy
-// app.enable('trust proxy');
-
-app.get('/', params, proxy);
-app.get('/favicon.ico', (req, res) => res.status(204).end());
-app.listen(PORT, () => console.log(`Listening on ${PORT}`));
+"use strict";import s from"express";import o from"./src/params.js";import r from"./src/proxy.js";const t=process.env.PORT||8080;const e=s();e.get("/",o,r);e.get("/favicon.ico",(s,o)=>o.status(204).end());e.listen(t,()=>console.log(`Listening on ${t}`));
